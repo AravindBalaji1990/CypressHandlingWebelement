@@ -7,8 +7,8 @@ module.exports = defineConfig({
     },
   },
   env: {
-    geturl: '',
-    puturl:''
+    baseUrl1: '',
+    baseurl2:''
   }
   // retries: {
   //   // npx cypress run

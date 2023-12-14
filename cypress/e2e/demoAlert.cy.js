@@ -8,7 +8,7 @@ it('Javascript box handling',function() {
 cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 
 cy.get('#alertbtn').click()
-cy.wait(5000)
+cy.wait(5000)// static wait - just blindly waitf or the specific time period wothout doing anything
 // javascript based alert 
 //window:alert
 cy.on('window:alert',(str)=>
@@ -16,6 +16,9 @@ cy.on('window:alert',(str)=>
     //Mocha expression
     expect(str).to.equal('Hello , share this practice page and share your knowledge')
 });
+// cy.onAlert('OK', ()=>{
+//   expect(str).to.equal('Hello , share this practice page and share your knowledge')
+// })
 
 cy.wait(5000)
 

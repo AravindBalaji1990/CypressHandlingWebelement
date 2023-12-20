@@ -21,7 +21,7 @@ describe('demo check boxes', () => {
     cy.get("input[name='upfile']").selectFile('/Users/aravindbalaji/Documents/CypressDocuments/InteractingWithElementsCypress.docx')
     cy.wait(1000)
     cy.get("input[name='upfile']").invoke('val').should('contains', 'InteractingWithElementsCypress')
-    cy.wait(1000)
+    // cy.wait(1000)
     // multiple file upload
     cy.get("input[name='upfile']").selectFile(['/Users/aravindbalaji/Documents/CypressDocuments/InteractingWithElementsCypress.docx','/Users/aravindbalaji/Documents/CypressDocuments/CypressSyllabus.docx'])
   

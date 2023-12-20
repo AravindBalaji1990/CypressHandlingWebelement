@@ -7,7 +7,7 @@ cy.get('#opentab[href*=qaclick]').invoke('removeAttr','target').click({timeout: 
 
 // cy.get('#opentab[href*=qaclick]').click();
 // link of the new tab
-    cy.origin('https://www.qaclickacademy.com', () => {
+    cy.origin('https://www.qaclickacademy.com/', () => {
       // visit the new tab link
     cy.visit('https://www.qaclickacademy.com');
     // perform the actions ont he new tab which is opened onthe smae browser

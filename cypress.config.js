@@ -12,10 +12,10 @@ module.exports = defineConfig({
   //   baseUrl1: '',
   //   baseurl2:''
   // }
-  // retries: {
-  //   // npx cypress run
-  //   "runMode": 2,
-  //   // npx cypress open
-  //   "openMode": 2
-  // }
+  retries: {
+    // npx cypress run
+    "runMode": 2,
+    // npx cypress open
+    "openMode": 2
+  }
 });

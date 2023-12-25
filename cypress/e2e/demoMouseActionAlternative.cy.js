@@ -9,7 +9,7 @@ describe('Handling mouse hover action', () => {
       cy.get("#mousehover").click()
       cy.wait(5000)
       //  {force: true} -> it force clicks the element
-      cy.get(".mouse-hover div>a[href*=top]").click({force: true})
+      cy.get(".mouse-hover div>a[href*=top]").click({force: true},{log: true})
   
   })
 })

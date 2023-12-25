@@ -2,6 +2,7 @@
 
 describe('demo for hooks concept', function() 
 {
+   // all the hooks should be inside the describe
     
     beforeEach(function() {
         cy.log('this is from before each')
@@ -14,13 +15,10 @@ describe('demo for hooks concept', function()
      it('this this it 1', function() {
         cy.log('thisis from it 1')
         })
-
-        it.skip('this this it 2', function() {
-            cy.log('thisis from it 2')
-            })
-            it('this this it 3', function() {
-               cy.log('thisis from it 2')
-               })
+      it('this this it 2', function() {
+         cy.log('thisis from it 2')
+         })
+   
 
      after(function() {
         cy.log('this is from after')

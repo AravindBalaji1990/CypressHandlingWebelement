@@ -7,7 +7,7 @@ describe('Facebok Registration', () => {
       cy.get('a[data-testid=open-registration-form-button]').click()
       
       // get the method from command.js
-      // cy.EnterFnameSname('javascript','cypress');
+      cy.EnterFnameSname('javascript','cypress');
   
       // cy.entervalue('aravindbalajiv3@gmail.com','input[name=reg_email__]');
   

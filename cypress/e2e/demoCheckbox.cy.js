@@ -6,7 +6,7 @@ describe('check for attribute and text', () => {
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 
       //  cy.get("#checkBoxOption1").should('be.visible').click()
-      //   cy.get('[for="radio1"] > .radioButton').check()// how it works fro radio button
+      // //   cy.get('[for="radio1"] > .radioButton').check()// how it works fro radio button
       //  cy.get("#checkBoxOption2").check()// click onthe check box
       //  cy.get("#checkBoxOption2").should('be.checked')
       //  cy.get("#checkBoxOption2").uncheck()// unclick onthe same check box
@@ -17,15 +17,23 @@ describe('check for attribute and text', () => {
       // each - its keywor din cypress where it will loop
       // wrap - its a keyword in cypress where it can get the element specific do a action onthe element
       // whenever the $ appears that means the varible assigned has been parameterised
+      //callback function -> value(all the values),index(0,1,2) ,collection(it consist of all elements)
     //    cy.get('#checkbox-example input[type="checkbox"]').each(($xyz, index, $list) => {
-    //     if(index <2){
-    //       cy.log("printinghte 3rd parameter ",$list)
-    //       cy.log("printinghte 1st parameter ",$xyz)
+    //     cy.log("what is inside the index", index)
+    //     if(index ==1){
+    //       // cy.log("printing the list values " ,$list.values)
+    //       cy.log("printing the 3rd parameter ",$list)
+    //       cy.log("printing the 1st parameter ",$xyz)
+    //       //wrap will perform the actio on the element
     //         cy.wrap($xyz).check();
     //     }
     // })
 
     // tagname label should contain text and find the child with in the click
+    // contains and find
+    // contains -> attribute/text contains
+    //find -> always works woth cy.get or cy.contains -> findi s something like go to/search for the child elements
+    // ia m validating both the label amd the input check box
   //  cy.contains('label','Option1').find('input[type="checkbox"]').click()
       
 
@@ -36,14 +44,16 @@ describe('check for attribute and text', () => {
     //     cy.wrap($lbltext).next('label[for="bmw"]').check()
     // })
 
-    cy.get('#checkbox-example label').each(($label, index) => {
-        const labelText = $label.text().trim(); // Get the text of the label and trim any extra whitespace
-        if (labelText === 'Option3') {
-          // If the label text matches a specific text, click on its associated input element
-          cy.wrap($label).children('input').click(); // Click on the label element
-          cy.log(`Checked checkbox with label: ${labelText}`);
-        }
-      });
+    // cy.get('#checkbox-example label').each(($label, index) => {
+    //   // Get the text of the label and trim any extra whitespace
+    //     const labelText = $label.text().trim(); 
+    //     if (labelText === 'Option3') {
+    //       // If the label text matches a specific text, click on its associated input element
+    //       // Click on the label element
+    //       cy.wrap($label).children('input').click(); 
+    //       cy.log(`Checked checkbox with label: ${labelText}`);
+    //     }
+    //   });
       
 
   })

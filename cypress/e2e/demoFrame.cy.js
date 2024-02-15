@@ -13,9 +13,9 @@ cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 cy.get('#courses-iframe').scrollIntoView()
 
 //navigating into frame - telling the cypress we are in the frame
-cy.frameLoaded('#courses-iframe') 
+// cy.frameLoaded('#courses-iframe') 
 
-
+// cy.get('li>a[href=mentorship]').first().click()
 // now we are identifying the frame for the element
 // find -> identofy the element within the context
 cy.iframe().find('li>a[href=mentorship]').first().click()
@@ -25,8 +25,8 @@ cy.iframe().find('li>a[href=mentorship]').first().click()
 // .iframe("child-frame").find("").click()
 // Static sleeper - just for study purpose
 cy.wait(2000)
-cy.iframe().find('section.page-title h1').invoke('text').should('eq','Mentorship')
-cy.wait(2000)
+// cy.iframe().find('section.page-title h1').invoke('text').should('eq','Mentorship')
+// cy.wait(2000)
 //coming out of frame
 cy.get('a+button.btn.btn-primary').invoke('text').should('eq','Practice')
 

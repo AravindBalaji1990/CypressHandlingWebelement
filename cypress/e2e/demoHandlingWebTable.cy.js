@@ -8,11 +8,24 @@ cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 // scrollintoview -> it scrolls and navigates the page to the specific element
 // cy.get('#product').first().scrollIntoView();
 // cy.get('#product[name="courses"]').first().scrollIntoView();
+// cy.get("div.tableFixHead>table>tbody>tr").each(($data,index) => {
+//     const dataafter = $data.text()
+//     cy.get("div.tableFixHead>table>tbody>tr").find("td").then(function(datacolumn){
+//         cy.log(datacolumn)
+//     })
+
+// })
+
 cy.get("tr td:nth-child(2)").each(($el, index)=>{
     // get the text value of each tr td:nth-child(2)
     const data = $el.text()
+
+   
+
     if(data.includes("JMETER")){
         // next() -> points to the element next to it
+        
+
         cy.get("tr td:nth-child(2)").eq(index).next().then(function(price)
         {
             const pricetext = price.text()

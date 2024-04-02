@@ -33,9 +33,11 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
   //-- facebook enter the firstname and surname - adding the specific function/method to the cypress so that we can invoke it in the js files
   Cypress.Commands.add('EnterFnameSname', (firstname, surname) => {
+    cy.get('input[name=firstname]').should('be.visible')
     cy.get('input[name=firstname]').clear()
     cy.get('input[name=firstname]').type(firstname)
 
+    cy.get('input[name=lastname]').should('be.visible')
     cy.get('input[name=lastname]').clear()
     cy.get('input[name=lastname]').type(surname)
 

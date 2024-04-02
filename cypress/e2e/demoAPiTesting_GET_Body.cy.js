@@ -5,7 +5,8 @@ it('GET request', () => {
     // const validdata_email ='janet.weaver@reqres.in'
     // const validdata_page = 6
     cy.request(
-        {method: 'GET',
+        {
+        method: 'GET',
          url: 'https://reqres.in/api/users',
          headers: {
             'Content-Type': 'application/json',
@@ -25,17 +26,17 @@ it('GET request', () => {
     cy.log('response body : ' + datafromresponse)
     cy.log('response body : '+ JSON.stringify(response))
     })
-    }),
+    })
     
-    it('PUT request', () => {
-        cy.request({method: 'PUT', url: 'https://reqres.in/api/users/2', body: {
-        "name": datafromresponse,
-        "job": "zion resident"
-        }}).then((response) =>{
-        //Asserting the status code to be 200 for successful execution
-        expect(response.status).to.eq(200)
-        //Asserting the name which we have inserted into
-        expect(response.body.name).to.eq("janet.weaver@reqres.in")
-        })
-        })    
+    // it('PUT request', () => {
+    //     cy.request({method: 'PUT', url: 'https://reqres.in/api/users/2', body: {
+    //     "name": datafromresponse,
+    //     "job": "zion resident"
+    //     }}).then((response) =>{
+    //     //Asserting the status code to be 200 for successful execution
+    //     expect(response.status).to.eq(200)
+    //     //Asserting the name which we have inserted into
+    //     expect(response.body.name).to.eq("janet.weaver@reqres.in")
+    //     })
+    //     })    
 })

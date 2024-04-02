@@ -4,7 +4,6 @@ describe('Customer Feedback',function (){
   
   it('Juice Shop opening the website with comment - 5 letters with space - Happy path', function() {
 
-
     // as - aliase name for the network or any data 
     // as common keyword given for anything that we need to store
     cy.intercept('POST', 'https://juice-shop.herokuapp.com/api/Feedbacks/').as('post')
@@ -49,12 +48,16 @@ describe('Customer Feedback',function (){
         cy.log('request header',interception.request.headers)
         expect(interception.response.statusCode).to.eq(201)
         expect(interception.response.body.status).to.eq('success')
+
+        // what i have inputted
         expect(interception.request.body).to.have.all.keys('captchaId', 'captcha', 'comment', 'rating');
         expect(interception.request.body).to.have.property('captchaId').match(new RegExp('[0-9]+'));
         expect(interception.request.body).to.have.property('captcha').match(new RegExp('[0-9]+'));
         expect(interception.request.body).to.have.property('comment').match(new RegExp('[a-zA-Z]+'));
         expect(interception.request.body).to.have.property('rating').match(new RegExp('[0-9]+'));
+        // printhe request body
         cy.log("request body:  ",interception.request.body )
+        // printhe response body
         cy.log("response : ",interception.response.body)
       })
   })

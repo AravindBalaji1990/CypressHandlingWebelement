@@ -4,14 +4,22 @@ describe('check for attribute and text', () => {
     it('check for attribute and text', () => {
      
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        // should is a keyword in cypress which is used to do a validation or verificairton on the element
 
-        // cy.get("#checkBoxOption1").find("")
-      //  cy.get("#checkBoxOption1").should('').click()
-      // //   cy.get('[for="radio1"] > .radioButton').check()// how it works fro radio button
-      //  cy.get("#checkBoxOption2").check()// click onthe check box
-      //  cy.get("#checkBoxOption2").should('be.checked')
-      //  cy.get("#checkBoxOption2").uncheck()// unclick onthe same check box
-      //  cy.get("#checkBoxOption2").should('not.be.checked')
+      //   cy.get("input[value='radio1']").should('be.visible')
+      //   cy.get("input[value='radio1']").should('be.enabled')
+      //   cy.get("input[value='radio1']").should('not.be.checked').click()
+      //   // cy.get("input[value='radio1']").should('be.checked')// chekc for the negative
+
+      //   //how many radio button needs to be available
+      //   // its is a keyowrd to identify the elemnt validation
+      //   cy.get("input[type='radio']").its('length').should('be.at.least', 2)
+
+      //   // cy.get("#checkBoxOption1").find("")
+      // // //   cy.get('[for="radio1"] > .radioButton').check()// how it works fro radio button
+      //  cy.get("input[value='radio3']").check()// click onthe check box
+      //  cy.get("input[value='radio2']").check()// unclick onthe same check box
+      //  cy.get("input[value='radio3']").should('not.be.checked')
 
 
       // I get all the check box and click it 
@@ -19,23 +27,25 @@ describe('check for attribute and text', () => {
       // wrap - its a keyword in cypress where it can get the element specific do a action onthe element
       // whenever the $ appears that means the varible assigned has been parameterised
       //callback function -> value(all the values),index(0,1,2) ,collection(it consist of all elements)
-    //    cy.get('#checkbox-example input[type="checkbox"]').each(($xyz, index, $list) => {
-    //     cy.log("what is inside the index", index)
-    //     // if(index ==1){
-    //       // cy.log("printing the list values " ,$list.values)
-    //       cy.log("printing the 3rd parameter ",$list)
-    //       cy.log("printing the 1st parameter ",$xyz)
-    //       //wrap will perform the actio on the element
-    //         cy.wrap($xyz).check();
-    //     // }
-    // })
+      //$ specifies a element that is being parameterised 
+      //  cy.get("input[type='radio']").each(($xyz, index, $list) => {
+      //   cy.log("what is inside the index", index)
+      //   // if(index ==1){
+      //     // cy.log("printing the list values " ,$list.values)
+      //     cy.log("printing the 3rd parameter ",$list)
+      //     cy.log("printing the 1st parameter ",$xyz)
+      //     //wrap will perform the action on the element
+      //       cy.wrap($xyz).should('be.visible').check();
+      //       cy.wrap($xyz).should('be.checked')
+
+      //   })
 
     // tagname label should contain text and find the child with in the click
     // contains and find
     // contains -> attribute/text contains
     //find -> always works woth cy.get or cy.contains -> findi s something like go to/search for the child elements
-    // ia m validating both the label amd the input check box
-  //  cy.contains('label','Option1').find('input[type="checkbox"]').click()
+    // i am validating both the label amd the input check box
+   cy.contains('label','Radio1').find('input[type="radio"]').click()
       
 
   // each -> elements value 

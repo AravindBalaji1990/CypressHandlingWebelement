@@ -16,6 +16,6 @@ cy.get('#opentab[href*=qaclick]').invoke('removeAttr','target').click({timeout: 
 
 })
 //going back to the previosu page
-cy.go('back')
+cy.go(-1)
   })
 })

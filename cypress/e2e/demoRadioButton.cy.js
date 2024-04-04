@@ -45,26 +45,26 @@ describe('check for attribute and text', () => {
     // contains -> attribute/text contains
     //find -> always works woth cy.get or cy.contains -> findi s something like go to/search for the child elements
     // i am validating both the label amd the input check box
-   cy.contains('label','Radio1').find('input[type="radio"]').click()
+  //  cy.contains('label','Radio1').find('input[type="radio"]').click()
       
 
   // each -> elements value 
   //each(element, indexvalue, collection)
-    // cy.contains('Option2').each(($lbltext, index, $abc)=>{
-    //     cy.wrap($lbltext).prev('label[for="bmw"]').check()
-    //     cy.wrap($lbltext).next('label[for="bmw"]').check()
+    // cy.contains('Radio2').each(($lbltext, index, $abc)=>{
+    //     cy.wrap($lbltext).prev('label[for="radio1"]').click()
+    //     cy.wrap($lbltext).next('label[for="radio3"]').click()
     // })
 
-    // cy.get('#checkbox-example label').each(($label, index) => {
-    //   // Get the text of the label and trim any extra whitespace
-    //     const labelText = $label.text().trim(); 
-    //     if (labelText === 'Option3') {
-    //       // If the label text matches a specific text, click on its associated input element
-    //       // Click on the label element
-    //       cy.wrap($label).children('input').click(); 
-    //       cy.log(`Checked checkbox with label: ${labelText}`);
-    //     }
-    //   });
+    cy.get('#radio-btn-example label').each(($label, index) => {
+      // Get the text of the label and trim any extra whitespace
+        const labelText = $label.text().trim(); 
+        if (labelText === 'Radio3') {
+          // If the label text matches a specific text, click on its associated input element
+          // Click on the label element
+          cy.wrap($label).children('input').click(); 
+          cy.log(`Checked checkbox with label: ${labelText}`);
+        }
+      });
       
 
   })

@@ -45,16 +45,16 @@ describe('check for attribute and text', () => {
     //     cy.wrap($lbltext).next('label[for="bmw"]').check()
     // })
 
-    // cy.get('#checkbox-example label').each(($label, index) => {
-    //   // Get the text of the label and trim any extra whitespace
-    //     const labelText = $label.text().trim(); 
-    //     if (labelText === 'Option3') {
-    //       // If the label text matches a specific text, click on its associated input element
-    //       // Click on the label element
-    //       cy.wrap($label).children('input').click(); 
-    //       cy.log(`Checked checkbox with label: ${labelText}`);
-    //     }
-    //   });
+    cy.get('#checkbox-example label').each(($label, index) => {
+      // Get the text of the label and trim any extra whitespace
+        const labelText = $label.text().trim(); 
+        if (labelText === 'Option3') {
+          // If the label text matches a specific text, click on its associated input element
+          // Click on the label element
+          cy.wrap($label).children('input').click(); 
+          cy.log(`Checked checkbox with label: ${labelText}`);
+        }
+      });
       
 
   })

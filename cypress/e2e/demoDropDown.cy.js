@@ -1,15 +1,24 @@
 /// <reference types="Cypress" />
 
 describe('Handling dropdwon values', () => {
+  before(function() {
+    cy.log('this is from before ')
+    var env1 = Cypress.env("url1")
+        
+        cy.visit(env1)
+ })
     it('Handling dropdwon values', () => {
      
-        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        // cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        // cy.visit("/")// this will ivoke the baseUrl keyword under the cypress.config.js file
+
+        
 
         // below i am trying to retrieve the value of the attribute value
         //select is a part of cypress keyword and it is used to select the items from the dropdown
 
         // i am using athe value attribute int he dropdwon element to select the partoicular item
-    //  cy.get('select[id=dropdown-class-example]').select('option1');
+     cy.get('select[id=dropdown-class-example]').select('option1');
 
     //  cy.wait(3000)
 

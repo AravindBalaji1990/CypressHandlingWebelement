@@ -16,6 +16,7 @@ cy.on('window:alert',(str)=>
     //Mocha expression
     expect(str).to.equal('Hello , share this practice page and share your knowledge')
 });
+//below item is deperecated 
 // cy.onAlert('OK', ()=>{
 //   expect(str).to.equal('Hello , share this practice page and share your knowledge')
 // })

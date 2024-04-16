@@ -8,6 +8,7 @@ describe('demo for hooks concept', function()
         cy.log('this is from before each')
      })
 
+     //beforeall
      before(function() {
         cy.log('this is from before ')
      })
@@ -15,11 +16,12 @@ describe('demo for hooks concept', function()
      it('this this it 1', function() {
         cy.log('thisis from it 1')
         })
-      it('this this it 2', function() {
+      it.skip('this this it 2', function() {
          cy.log('thisis from it 2')
          })
    
 
+         //afterall
      after(function() {
         cy.log('this is from after')
      })

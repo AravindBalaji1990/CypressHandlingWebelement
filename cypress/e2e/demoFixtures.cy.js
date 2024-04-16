@@ -12,6 +12,7 @@ cy.fixture('data').then(function(testdata){
     cy.get('#name').clear()
     cy.wait(2000)
     cy.get('#name').type(testdata.name2)
+    
 })
 })
 })

@@ -14,8 +14,9 @@ describe('demo check boxes', () => {
   
   // }),
   it('upload file form', () => {
-    const url = Cypress.env('url2');
-    cy.visit(url)
+    // const url = Cypress.env('url2');
+    // cy.visit(url)
+    cy.visit("https://cgi-lib.berkeley.edu/ex/fup.html")
     // cypress function where we are scrollingin to the element inside a page
     cy.get("input[name='upfile']").scrollIntoView()
     // we upload the file

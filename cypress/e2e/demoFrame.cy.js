@@ -1,6 +1,5 @@
 /// <reference types="Cypress" />
 /// <reference types="cypress-iframe" />
-import 'cypress-iframe'
 
 describe('Handling Frames', function() 
 {

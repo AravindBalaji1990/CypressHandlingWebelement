@@ -12,8 +12,8 @@ it('PUT request', () => {
     expect(response.status).to.eq(200)
     //Asserting the name which we have inserted into
     expect(response.body.name).to.eq("Angel")
-    expect(response.body.updatedAt).to.includes("2024-02-21")
-    expect(response.body.updatedAt).to.contains("2024-02-21")
+    expect(response.body.updatedAt).to.includes("2024-04-25")
+    expect(response.body.updatedAt).to.contains("2024-04-25")
     })
     })    
 })

@@ -49,6 +49,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
   })
 
+  Cypress.Commands.add('assertUrl', (expectedvalue) => {
+    cy.url().should('include', expectedvalue)
+  })
+
 // //   Cypress.Commands.addAll({
 // //     EnterFnameSname(firstname, surname){},
 // //     entervalue(email,locator){},

@@ -1,13 +1,24 @@
 describe('Facebok Registration', () => {
     it('Facebook create account', () => {
       cy.visit('https://www.facebook.com/')
+      cy.assertUrl('facebook.com')
+      cy.screenshot() // thsi will take the entire page
+
+       // thsi will take the entire page
       // clicking the logo
-      cy.get('i.fb_logo').click()
+      cy.get('i.fb_logo').screenshot()// this will take the screenshot at element level
+      cy.get('i.fb_logo').click({wait:5000})
+
       //initialisation to url
       cy.get('a[data-testid=open-registration-form-button]').click()
       
       // get the method from command.js
-      cy.EnterFnameSname('javascript','cypress');
+      // cy.EnterFnameSname('javascript','cypress');
+      //with fixtures and funciton from command.js
+     // cy.fixture("data").then(function(testdata){
+              cy.EnterFnameSname(testdata.name1,testdata.name2)
+              cy.screenshot()
+    //})
   
       // cy.entervalue('aravindbalajiv3@gmail.com','input[name=reg_email__]');
   

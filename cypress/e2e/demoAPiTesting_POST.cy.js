@@ -2,7 +2,8 @@ describe('template spec', () => {
 //This block inserts the data which is mentioned in the body of the request
 it('POST request', () => {
 cy.request(
-    {method: 'POST', 
+    {
+    method: 'POST', 
     url: 'https://reqres.in/api/users', 
     headers: {
         'Content-Type': 'application/json',

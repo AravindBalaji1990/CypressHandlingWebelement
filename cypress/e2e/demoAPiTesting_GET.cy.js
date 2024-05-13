@@ -12,7 +12,7 @@ it('GET request', () => {
     expect(response.status).to.eq(200)
     cy.log('response body : ', JSON.stringify(response.body))
     expect(response.body.total).to.eq(12)
-    expect(response.body.data[0].email).to.eq('gorge.bluth@reqres.in')
+    expect(response.body.data[0].email).to.eq('george.bluth@reqres.in')
     cy.log('response body : ', response.status)
     // to retrievt he second value in the api from data
     var datafromresponse = response.body.data[1].email;

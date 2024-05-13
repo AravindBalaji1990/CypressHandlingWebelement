@@ -6,10 +6,10 @@ describe('check for attribute and text', () => {
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
         // should is a keyword in cypress which is used to do a validation or verificairton on the element
 
-      //   cy.get("input[value='radio1']").should('be.visible')
-      //   cy.get("input[value='radio1']").should('be.enabled')
-      //   cy.get("input[value='radio1']").should('not.be.checked').click()
-      //   // cy.get("input[value='radio1']").should('be.checked')// chekc for the negative
+        // cy.get("input[value='radio1']").should('be.visible')
+        // cy.get("input[value='radio1']").should('be.enabled').click()
+        // cy.get("input[value='radio1']").should('not.be.checked')
+        // cy.get("input[value='radio1']").should('be.checked')// chekc for the negative
 
       //   //how many radio button needs to be available
       //   // its is a keyowrd to identify the elemnt validation
@@ -35,9 +35,10 @@ describe('check for attribute and text', () => {
       //     cy.log("printing the 3rd parameter ",$list)
       //     cy.log("printing the 1st parameter ",$xyz)
       //     //wrap will perform the action on the element
+      //     $xyz.
       //       cy.wrap($xyz).should('be.visible').check();
       //       cy.wrap($xyz).should('be.checked')
-
+      //   // }
       //   })
 
     // tagname label should contain text and find the child with in the click
@@ -50,21 +51,26 @@ describe('check for attribute and text', () => {
 
   // each -> elements value 
   //each(element, indexvalue, collection)
-    // cy.contains('Radio2').each(($lbltext, index, $abc)=>{
-    //     cy.wrap($lbltext).prev('label[for="radio1"]').click()
-    //     cy.wrap($lbltext).next('label[for="radio3"]').click()
-    // })
+    cy.contains('Radio2').each(($lbltext, index, $abc)=>{
+        cy.wrap($lbltext).prev('label[for="radio1"]').children('input').click()
+        cy.wrap($lbltext).next('label[for="radio3"]').children('input').click()
+    })
 
-    cy.get('#radio-btn-example label').each(($label, index) => {
-      // Get the text of the label and trim any extra whitespace
-        const labelText = $label.text().trim(); 
-        if (labelText === 'Radio3') {
-          // If the label text matches a specific text, click on its associated input element
-          // Click on the label element
-          cy.wrap($label).children('input').click(); 
-          cy.log(`Checked checkbox with label: ${labelText}`);
-        }
-      });
+    // cy.get('#radio-btn-example label').each(($label) => {
+    //   // Get the text of the label and trim any extra whitespace
+    //     const labelText = $label.text().trim(); 
+    //     // === -> same dataype and same value
+    //     // == only the value is equal or not 
+    //     // === value and datatype is equal example : 5 / "5"
+    //     //5 =="5" true
+    //     //5 === "5" false
+    //     if (labelText === 'Radio3') {
+    //       // If the label text matches a specific text, click on its associated input element
+    //       // Click on the label element
+    //       cy.wrap($label).children('input').click(); 
+    //       cy.log(`Checked checkbox with label: ${labelText}`);
+    //     }
+    //   });
       
 
   })

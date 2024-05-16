@@ -29,10 +29,10 @@ module.exports = defineConfig({
     },
   },
 
-  retries: {
-    // npx cypress run
-    "runMode": 1,
-    // npx cypress open
-    "openMode": 2
-  }
+  // retries: {
+  //   // npx cypress run
+  //   "runMode": 1,
+  //   // npx cypress open
+  //   "openMode": 2
+  // }
 });

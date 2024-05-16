@@ -1,15 +1,15 @@
 /// <reference types="Cypress" />
 
 describe('Handling dropdwon values', () => {
-  before(function() {
-    cy.log('this is from before ')
-    var env1 = Cypress.env("url1")
+//   before(function() {
+//     cy.log('this is from before ')
+//     var env1 = Cypress.env("url1")
         
-        cy.visit(env1)
- })
+//         cy.visit(env1)
+//  })
     it('Handling dropdwon values', () => {
      
-        // cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
         // cy.visit("/")// this will ivoke the baseUrl keyword under the cypress.config.js file
 
         

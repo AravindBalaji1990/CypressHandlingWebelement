@@ -16,7 +16,7 @@ describe('demo for hooks concept', function()
      it('this this it 1', function() {
         cy.log('thisis from it 1')
         })
-      it.skip('this this it 2', function() {
+      it('this this it 2', function() {
          cy.log('thisis from it 2')
          })
    

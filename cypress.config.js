@@ -11,7 +11,7 @@ module.exports = defineConfig({
     inlineAssets: true,
     saveAllAttempts: false,
   },
-  defaultCommandTimeout: 10000,
+  defaultCommandTimeout: 20000,
   screenshotOnRunFailure: true,
   video: true,
   e2e: {

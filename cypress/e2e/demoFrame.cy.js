@@ -17,7 +17,13 @@ cy.get('#courses-iframe').scrollIntoView()
 // cy.get('li>a[href=mentorship]').first().click()
 // now we are identifying the frame for the element
 // find -> identofy the element within the context
-cy.iframe().find('li>a[href=mentorship]').first().click()
+// cy.iframe().find('li>a[href=mentorship]').first().click()
+try{
+cy.iframe().find('a[href$=sign_u]').first().should('be.visible')
+}catch(error){
+    cy.error(error)
+}
+cy.iframe().find('a[href$=sign_up]').first().click({timeout:5000})
 
 // //Nested frame 
 // cy.iframe().find('li>a[href=mentorship]').first()

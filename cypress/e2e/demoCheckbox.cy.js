@@ -11,7 +11,8 @@ describe('check for attribute and text', () => {
       //  cy.get("#checkBoxOption2").check()// click onthe check box
       //  cy.get("#checkBoxOption2").should('be.checked')
       //  cy.get("#checkBoxOption2").uncheck()// unclick onthe same check box
-      //  cy.get("#checkBoxOption2").should('not.be.checked')
+      // cy.wait(5000)
+       cy.get("#checkBoxOption2").should('not.be.checked').click({timeout:5000})
 
 
       // I get all the check box and click it 
@@ -27,7 +28,7 @@ describe('check for attribute and text', () => {
     //       cy.log("printing the 1st parameter ",$xyz)
     //       //wrap will perform the actio on the element
     //         cy.wrap($xyz).check();
-    //     // }
+    //     }
     // })
 
     // tagname label should contain text and find the child with in the click

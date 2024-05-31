@@ -6,14 +6,14 @@ it('Handling Webtables in the webpage',function() {
 cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 // to print the valus from the tables
 // below item is for second table
-cy.get("div.tableFixHead>table>tbody>tr").each(($data,index) => {
-    const dataafter = $data.text()
-    cy.log('cehck the row', dataafter)
-    cy.get("div.tableFixHead>table>tbody>tr").find("td").then(function(datacolumn){
-        cy.log(datacolumn.text())
-    })
+// cy.get("div.tableFixHead>table>tbody>tr").each(($data,index) => {
+//     const dataafter = $data.text()
+//     cy.log('cehck the row', dataafter)
+//     cy.get("div.tableFixHead>table>tbody>tr").find("td").then(function(datacolumn){
+//         cy.log(datacolumn.text())
+//     })
 
-})
+// })
 
 // below one is for first table
 cy.get("table#product[name='courses']>tbody>tr>td:nth-child(2)").each(($el, index)=>{

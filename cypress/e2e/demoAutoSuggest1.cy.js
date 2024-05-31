@@ -10,17 +10,18 @@ cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 
 //Dynamic dropdowns
 cy.get('#autocomplete').clear()
-cy.get('#autocomplete').type('ind')
+cy.get('#autocomplete').type('india')
 
 cy.get('ul.ui-menu.ui-widget.ui-widget-content.ui-autocomplete.ui-front').invoke('attr','style').should('contains','block')
 
 // cy.get('ul.ui-menu.ui-widget.ui-widget-content.ui-autocomplete.ui-front>li:nth-child(2)').click()
 // cy.get('ul.ui-menu.ui-widget.ui-widget-content.ui-autocomplete.ui-front').children("li:nth-child(2)").click()
 // another approach using xpath
-// cy.get("//*[@class='ui-menu-item']/div[starts-with(text(),'India')]").click()
+// cy.xpath("//*[@class='ui-menu-item']/div[starts-with(text(),'India')]").click()
 cy.get('.ui-menu-item div').each(($e1, index, $list) => {
     if($e1.text()==="India")
     {
+        //wrap is a keyword in cypress which will help us to person actions onthe itratable elements
         cy.wrap($e1).click()
         // $e1.click()
     }

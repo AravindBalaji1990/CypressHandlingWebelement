@@ -30,8 +30,8 @@ cy.on('window:confirm',(str)=>
     expect(str).to.equal('Hello , Are you sure you want to confirm?')
 });
 
-}  )
-}  )
+} )
+} )
 
 /** Visit the webpage with a JavaScript alert
 cy.visit('https://example.com');

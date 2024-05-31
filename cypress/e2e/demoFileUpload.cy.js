@@ -19,13 +19,13 @@ describe('demo check boxes', () => {
     cy.visit("https://cgi-lib.berkeley.edu/ex/fup.html")
     // cypress function where we are scrollingin to the element inside a page
     cy.get("input[name='upfile']").scrollIntoView()
-    // we upload the file
+    // selectFile (path of the file ) - we upload the file
     cy.get("input[name='upfile']").selectFile('/Users/aravindbalaji/Documents/CypressDocuments/InteractingWithElementsCypress.docx')
     cy.wait(1000)
     cy.get("input[name='upfile']").invoke('val').should('contains', 'InteractingWithElementsCypress')
     // cy.wait(1000)
     // multiple file upload
     cy.get("input[name='upfile']").selectFile(['/Users/aravindbalaji/Documents/CypressDocuments/InteractingWithElementsCypress.docx','/Users/aravindbalaji/Documents/CypressDocuments/CypressSyllabus.docx'])
-  
+    // cy.get("input[name='upfile']").invoke('val').should('include', 'files')
   })
   })

@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-31T15:59:55.569Z",
+    "end": "2024-05-31T15:59:55.899Z",
+    "duration": 330,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a41c85a7-e552-44ba-8285-98aacfc1e567",
+      "title": "",
+      "fullFile": "cypress/e2e/demoAPiTesting_POST.cy.js",
+      "file": "cypress/e2e/demoAPiTesting_POST.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "280e3319-5405-4c71-9d2a-62bc4fc18d49",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "POST request",
+              "fullTitle": "template spec POST request",
+              "timedOut": null,
+              "duration": 323,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: 'https://reqres.in/api/users',\n  headers: {\n    'Content-Type': 'application/json',\n    'Custom-Header': 'Custom-Value',\n    'Authorization': 'Bearer' + '3454dsfdvdfvdfgfdgfhf'\n  },\n  body: {\n    \"name\": \"Sample2\",\n    \"job\": \"Team lead2\"\n  }\n}).then(response => {\n  //Asserting the status code to be 201 for successful execution\n  expect(response.status).to.eq(201);\n  //Asserting the name which we have inserted into\n  // var sample = response.body.name;\n  expect(response.body.name).to.eq(\"Sample2\");\n  expect(response.body.job).to.eq(\"Team lead2\");\n  //Asserting the status text to confirm whether it is created\n  expect(response.statusText).to.eq(\"Created\");\n});",
+              "err": {},
+              "uuid": "3754bd1c-ff73-4654-b6e5-cf987b4de0bd",
+              "parentUUID": "280e3319-5405-4c71-9d2a-62bc4fc18d49",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3754bd1c-ff73-4654-b6e5-cf987b4de0bd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 323,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Sample run",
+        "embeddedScreenshots": false,
+        "video": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-31T16:00:17.424Z",
+    "end": "2024-05-31T16:00:21.426Z",
+    "duration": 4002,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "41d79689-dd03-4c45-8826-dbb5a1eb628d",
+      "title": "",
+      "fullFile": "cypress/e2e/demoAlertPopup.cy.js",
+      "file": "cypress/e2e/demoAlertPopup.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cebdf32d-9ccb-4fa6-b824-0b1f71aa099e",
+          "title": "pop up based alert box handling",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "pop up based alert box handling",
+              "fullTitle": "pop up based alert box handling pop up based alert box handling",
+              "timedOut": null,
+              "duration": 2613,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://vodkabears.github.io/remodal/#modal\");\ncy.get(\"div.intro__links a[href*='modal']:nth-child(1)\").should('be.visible');\ncy.get(\"div[class='remodal remodal-is-initialized remodal-is-opened']\").should('be.visible');\ncy.get(\"p#modalDesc\").invoke('text').should('include', 'The modal done right');\ncy.get(\"button[data-remodal-action='confirm']\").click();",
+              "err": {},
+              "uuid": "9e8daa9a-dddb-457f-8fe6-83f22a2c1f9d",
+              "parentUUID": "cebdf32d-9ccb-4fa6-b824-0b1f71aa099e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9e8daa9a-dddb-457f-8fe6-83f22a2c1f9d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2613,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Sample run",
+        "embeddedScreenshots": false,
+        "video": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

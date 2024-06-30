@@ -34,6 +34,12 @@ it('Locator Usage with cypress first() and last()',function() {
       // we are using the cypress function find used to identify the attribute l inked ot the element
       cy.get("table#product[name='courses']>tbody>tr").find('th').should("be.visible")
       
-      })
+      }),
+      it.only('Xpath cehck with cypress',function() {
 
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        // we are using the cypress function find used to identify the attribute l inked ot the element
+        cy.xpath("//*[@id='radio-btn-example']/fieldset/label[1]/input").should("be.visible")
+        
+        })
 })

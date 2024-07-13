@@ -21,7 +21,25 @@ cy.get("table#product[name='courses']>tbody>tr>td:nth-child(2)").each(($el, inde
     const data = $el.text()
     if(data.includes("JMETER")){
         // next() -> points to the element next to it
-    cy.get("table#product[name='courses']>tbody>tr>td:nth-child(2)").eq(index).next().then(function(price)
+    cy.get("table#product[name='courses']>tbody>tr>td:nth-child(2)").eq(index).next().then((price)=>
+        {
+            const pricetext = price.text()
+            // mocha assertion
+            expect(pricetext).to.equal('25')
+            
+        })
+    }
+})
+}),
+it('Handling Webtables in the webpage and use the index to check the row',function() {
+cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+
+// below one is for first table
+cy.get("table#product[name='courses']>tbody>tr>td:nth-child(1)").each(($el, index)=>{
+    // get the text value of each tr td:nth-child(2)
+    if(index == 4){
+        // next() -> points to the element next to it
+    cy.get("table#product[name='courses']>tbody>tr>td:nth-child(2)").eq(index).next().then((price)=>
         {
             const pricetext = price.text()
             // mocha assertion

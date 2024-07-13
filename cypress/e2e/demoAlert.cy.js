@@ -24,6 +24,7 @@ cy.on('window:alert',(str)=>
 cy.wait(5000)
 
 cy.get('[value="Confirm"]').click()
+
 cy.on('window:confirm',(str)=>
 {
     //Mocha

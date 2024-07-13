@@ -7,12 +7,16 @@ it('new window handling',function() {
 
 cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 // as -> giving a aliase name 
-cy.get('#openwindow').as('newwindowbutton');
+// cy.get('#openwindow').as('newwindowbutton');
 // @ will get the aliase name for the specific locator/anything
-cy.get('@newwindowbutton').click();
+// cy.get('@newwindowbutton').click();
 
-cy.visit('http://www.qaclickacademy.com/', { newTab: true });
-cy.contains('h1', 'QAClick').should('be.visible');
+cy.visit('http://www.qaclickacademy.com/',{newTab: true});
+
+cy.origin('https://www.qaclickacademy.com', () => {
+    // any validaiton that needs to be performed as part of 
+    cy.get("a[href$='qaclickacademy.com']").first().should('be.visible');
+  })
 // cy.get('#some-element-id').click();
 // ... continue with other interactions and assertions in the new window
 

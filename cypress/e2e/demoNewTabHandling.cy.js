@@ -1,5 +1,5 @@
 describe('Handling new Tab using Cypress', () => {
-  it('Handling new tab', () => {
+  it.only('Handling new tab', () => {
     cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 
     // weneed to remove the target attribute
@@ -21,7 +21,7 @@ cy.get('#opentab[href*=qaclick]').invoke('removeAttr','target').click()
 cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 
   }),
-  it.only('Handling new window- workaround', () => {
+  it('Handling new window- workaround', () => {
     cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 
     cy.get('#openwindow').should('be.visible')

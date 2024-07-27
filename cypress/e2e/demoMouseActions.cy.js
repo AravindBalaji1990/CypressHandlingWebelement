@@ -1,13 +1,15 @@
 /// <reference types="Cypress" />
 
 describe('Handling mouse hover action', () => {
-    it.skip('Handling mouse hover', () => {
+    it.only('Handling mouse hover', () => {
       cy.visit("https://practice.expandtesting.com/tooltips")
       // this element inside the page is not intended to do this action as the mouse hover is handled in css
       // cy.wait(15000)
       // cy.get("a[title='Sign in']").scrollIntoView()
       // trigger is part of your cypress aciton 
       // where it will replicate the scenairo of mouse actions
+
+      
       cy.get("#btn1").trigger("mouseover")
       cy.wait(3000)
       cy.get(".tooltip-inner").should('be.visible')
@@ -15,7 +17,7 @@ describe('Handling mouse hover action', () => {
       // cy.get("#btn1").should('have.attr','aria-describedby','tooltip732644')
 
       //if the value is dynamic
-      cy.get("#btn1").should(($element) =>{
+      cy.get("#btn1").then(($element) =>{
         //attr - keyword in cypress which will fetch theproperties of the element
         const storeattr = $element.attr('aria-describedby')
         //mocha - chai assertion
@@ -24,13 +26,15 @@ describe('Handling mouse hover action', () => {
       })     
   
   }),
-  it.only('Handling in mousehover in abnother website - this is failure if we did nto give force in click' , () =>{
+  it('Handling in mousehover in abnother website - this is failure if we did nto give force in click' , () =>{
  cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
 
- // scrollIntoView() - keywiord in cypress where it wills croll till the element
-      cy.get("#mousehover").scrollIntoView()
+      // cy.get("#mousehover")
+      // cy.contains("Mouse Hover").trigger("mouseover")
+    // scrollIntoView() - keywiord in cypress where it wills croll till the element
+      // cy.get("#mousehover").scrollIntoView()
       cy.wait(2000)
-      // cy.get("#mousehover").trigger('mouseover')
+      cy.get("#mousehover").trigger('mouseover',{force:true})
       cy.get("a[href*=top]").click({force:true})
       // cy.get("a[href*=top]").type("",{force:true})
       // cy.get("a[href*=top]").dblclick({force: true})

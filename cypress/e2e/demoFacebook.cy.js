@@ -6,7 +6,7 @@ describe('Facebok Registration', () => {
 
        // thsi will take the entire page
       // clicking the logo
-      cy.get('i.fb_logo').screenshot()// this will take the screenshot at element level
+      // cy.get('i.fb_logo').screenshot()// this will take the screenshot at element level
       cy.get('i.fb_logo').click({wait:5000})
 
       //initialisation to url
@@ -15,12 +15,17 @@ describe('Facebok Registration', () => {
       // get the method from command.js
       // cy.EnterFnameSname('javascript','cypress');
       //with fixtures and funciton from command.js
-     // cy.fixture("data").then(function(testdata){
-              cy.EnterFnameSname(testdata.name1,testdata.name2)
-              cy.screenshot()
-    //})
+     cy.fixture("data").then((testdata) =>{
+      cy.EnterFnameSname(testdata.name1,testdata.name2)
+      cy.screenshot()
+    })
+
+    cy.fixture("data").then(function(testdata){
+      cy.EnterFnameSname(testdata.name1,testdata.name2)
+      cy.screenshot()
+    })
   
-      // cy.entervalue('aravindbalajiv3@gmail.com','input[name=reg_email__]');
+      cy.entervalue('aravindbalajiv3@gmail.com','input[name=reg_email__]');
   
       // cy.get('input[name=reg_email_confirmation__]').clear()
       // cy.get('input[name=reg_email_confirmation__]').type('aravindbalajiv3@gmail.com')

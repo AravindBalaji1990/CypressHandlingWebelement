@@ -11,7 +11,6 @@ it('DELETE request', () => {
             'Content-Type': 'application/json',
             // sometimes our development team might provide some custom exception to validate 
             'Custom-Header': 'Custom-Value',
-            
         }
     }).then((response) =>{
     //Asserting the status code to be 204 for successful execution

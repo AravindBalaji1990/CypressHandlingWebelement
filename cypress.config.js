@@ -1,3 +1,4 @@
+const { debug } = require("console");
 const { defineConfig } = require("cypress");
 // const {downfile} = require("cypress-downloadfile/lib/addPlugin")
 
@@ -10,13 +11,17 @@ module.exports = defineConfig({
     video: true,
     inlineAssets: true,
     saveAllAttempts: false,
+    debug: true,
+    saveJson: true
   },
-  defaultCommandTimeout: 20000,
+  defaultCommandTimeout: 10000,
   screenshotOnRunFailure: true,
+  pageLoadTimeout: 30000,
+  waitForAnimations: true,
   video: true,
   e2e: {
     // maintain the url here
-    // baseUrl:'https://rahulshettyacademy.com/AutomationPractice/' ,
+    baseUrl:'https://rahulshettyacademy.com/AutomationPractice/' ,
     // multiple env like below
     env:{
       url1: 'https://rahulshettyacademy.com/AutomationPractice/',
@@ -33,6 +38,6 @@ module.exports = defineConfig({
   //   // npx cypress run
   //   "runMode": 1,
   //   // npx cypress open
-  //   "openMode": 2
+  //   "openMode": 3
   // }
 });

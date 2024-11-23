@@ -1,12 +1,12 @@
 /// <reference types="Cypress" />
 
 describe('Handling autocomplete', 
-// {
-//     retries: {
-//     runMode: 2,
-//     openMode: 3
-//     },
-//     }, 
+{
+    retries: {
+    runMode: 2,
+    openMode: 3
+    },
+    }, 
 ()=>  {
 
 it('Handling autocomplete',function() {

@@ -8,7 +8,8 @@ cy.request(
     headers: {
         'Content-Type': 'application/json',
         'Custom-Header': 'Custom-Value',
-        'Authorization': 'Bearer' + '3454dsfdvdfvdfgfdgfhf'
+        'Authorization': 'Bearer' + '3454dsfdvdfvdfgfdgfhf',
+        'cookies':''
     },
 body: {
 "name": "Sample2",

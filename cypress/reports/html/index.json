@@ -1,0 +1,117 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-11-23T07:46:40.397Z",
+    "end": "2024-11-23T07:46:52.181Z",
+    "duration": 11784
+  },
+  "results": [
+    {
+      "uuid": "5d589d07-72b0-4a9c-bb83-980b6f624ac8",
+      "title": "",
+      "fullFile": "cypress/e2e/demoShadowDom1.cy.js",
+      "file": "cypress/e2e/demoShadowDom1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0a15163a-e5d9-4799-95b0-f56dd26aa25c",
+          "title": "demo shadow dom",
+          "fullFile": "cypress/e2e/demoShadowDom1.cy.js",
+          "file": "cypress/e2e/demoShadowDom1.cy.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "demo shadow dom",
+              "fullTitle": "demo shadow dom demo shadow dom",
+              "timedOut": null,
+              "duration": 10508,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n    {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"screenshots/demoShadowDom1.cy.js/demo%20shadow%20dom%20--%20demo%20shadow%20dom%20(failed).png\"\n    },\n    {\n        \"title\": \"Spec video recording\",\n        \"value\": \"videos/demoShadowDom1.cy.js.mp4\"\n    }\n]",
+              "code": "cy.visit('http://watir.com/examples/shadow_dom.html');\n//  cy.reload()\n// without using nested shadow DOM feature \n//  cy.get(\"#shadow_host\")\n//  .shadow()\n//  .find('input[type=\"text\"]')\n//  .type(\"text\")\n//Nested shadow dom \ncy.get(\"#shadow_host\", {\n  shadow: true\n}).shadow().find('#nested_shadow_host', {\n  shadow: true\n}).shadow().find('#nested_shadow_content>di').invoke('text').should('eq', 'nested text');\n//without handling shadow element - this will throw an error\n// cy.get('#kils').scrollIntoView()\n// cy.get('#loader').should('not.be.visible')\n// cy.get('#loader').should('be.visible').then(($element)=>{\n//     cy.log('waiting')\n// }).timeout(10000)\n// cy.get('#userName').shadow().find('#kils').type('testshadow')\n// shadow-root open / closed\n// cy.get('#userName',{shadow: true}).shadow().find('#kils').type('testshadow')\n//Alternative way to handle\n// cy.get('#userName',{shadow: true}).then($element =>{\n//     const rootshadow = $element[0].shadowRoot;\n//     const targetdata = rootshadow.querySelector('#kils')\n//     cy.wrap(targetdata).type('test shadow')\n// })\n//nested shadow\n// cy.get('#userName').shadow().find('#kils').shadow().find('').type('testshadow')",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `#nested_shadow_content>di`, but never found it. Queried from:\n\n              > cy.get(#shadow_host, [object Object]).shadow().find(#nested_shadow_host, [object Object]).shadow()",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `#nested_shadow_content>di`, but never found it. Queried from:\n\n              > cy.get(#shadow_host, [object Object]).shadow().find(#nested_shadow_host, [object Object]).shadow()\n    at Context.eval (webpack://handlingelement/./cypress/e2e/demoShadowDom1.cy.js:19:6)",
+                "diff": null
+              },
+              "uuid": "02ff1859-f8bc-4224-be63-2bff6b2b0831",
+              "parentUUID": "0a15163a-e5d9-4799-95b0-f56dd26aa25c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "02ff1859-f8bc-4224-be63-2bff6b2b0831"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10508,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Sample run",
+        "embeddedScreenshots": false,
+        "video": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "debug": true,
+        "saveJson": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
